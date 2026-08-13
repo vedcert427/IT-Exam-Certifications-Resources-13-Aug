@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certification Exam Preparation Resources Hub (2026)</title>
+  <style>
+    /* ==========================================
+       1. GLOBAL RESET & THEME VARIABLES
+       ========================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --navy-deep: #0b1329;
+      --navy-slate: #0f172a;
+      --blue-accent: #2563eb;
+      --blue-hover: #1d4ed8;
+      --blue-light: #eff6ff;
+      --blue-border: #bfdbfe;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.04), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 25px 30px -5px rgba(15, 23, 42, 0.12), 0 12px 15px -6px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .brand-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==========================================
+       2. STICKY NAVIGATION HEADER
+       ========================================== */
+    .header-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      height: 70px;
+      display: flex;
+      align-items: center;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.3rem;
+      color: var(--navy-slate);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue-accent);
+      color: var(--bg-white);
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .brand-accent {
+      color: var(--blue-accent);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--blue-accent);
+      background: var(--blue-light);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--navy-slate);
+      cursor: pointer;
+    }
+
+    /* ==========================================
+       3. HERO SECTION WITH RADIAL SPOTLIGHT
+       ========================================== */
+    .hero {
+      background-color: var(--navy-deep);
+      background-image: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+      color: var(--bg-white);
+      padding: 6.5rem 1.5rem 6rem 1.5rem;
+      text-align: center;
+      position: relative;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hero-container {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-badge svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #94a3b8;
+      max-width: 650px;
+      margin: 0 auto 2.5rem auto;
+      line-height: 1.6;
+    }
+
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-primary {
+      background: var(--blue-accent);
+      color: var(--bg-white);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-hover);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--bg-white);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ==========================================
+       4. STATISTICS DASHBOARD (OVERLAPPING EFFECT)
+       ========================================== */
+    .stats-section {
+      max-width: 1200px;
+      margin: -3.5rem auto 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 20;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-item {
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+      padding: 0 1rem;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--blue-accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ==========================================
+       5. EXAMS & SEARCH GRID CONTAINER
+       ========================================== */
+    .resources-section {
+      max-width: 1200px;
+      margin: 4.5rem auto 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .search-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 2.5rem;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .search-input-container {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input-container svg {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      width: 1.25rem;
+      height: 1.25rem;
+      pointer-events: none;
+    }
+
+    .search-bar-input {
+      width: 100%;
+      background: var(--bg-light);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1rem 0.9rem 3.25rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--navy-slate);
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    .search-bar-input:focus {
+      background: var(--bg-white);
+      border-color: var(--blue-accent);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+
+    .sort-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sort-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .sort-select {
+      background: var(--bg-light);
+      border: 1.5px solid var(--border-color);
+      padding: 0.85rem 2rem 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1rem;
+      min-width: 160px;
+      transition: var(--transition-smooth);
+    }
+
+    .sort-select:focus {
+      border-color: var(--blue-accent);
+      background-color: var(--bg-white);
+    }
+
+    /* Tabs Filter Bar */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .filter-tab {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-tab:hover {
+      color: var(--navy-slate);
+      background: #e2e8f0;
+    }
+
+    .filter-tab.active {
+      color: var(--blue-accent);
+      background: var(--blue-light);
+      border-color: var(--blue-border);
+    }
+
+    /* Dynamic Results Counter */
+    .results-info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .results-count {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .results-count span {
+      color: var(--navy-slate);
+      font-weight: 700;
+    }
+
+    /* Cards Grid */
+    .exams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+
+    .exam-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exam-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--blue-accent);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .exam-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .exam-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-category-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.15rem;
+    }
+
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: var(--blue-light);
+      color: var(--blue-accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.05em;
+    }
+
+    .card-icon {
+      color: var(--text-muted);
+      background: var(--bg-light);
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon svg {
+      width: 1.15rem;
+      height: 1.15rem;
+    }
+
+    .card-code {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy-slate);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      word-break: break-all;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--bg-white);
+      border: 1.5px solid var(--blue-accent);
+      color: var(--blue-accent);
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      width: 100%;
+      transition: var(--transition-smooth);
+    }
+
+    .card-btn:hover {
+      background: var(--blue-accent);
+      color: var(--bg-white);
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    }
+
+    .card-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Empty state */
+    .no-results-card {
+      grid-column: 1 / -1;
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .no-results-icon {
+      width: 4rem;
+      height: 4rem;
+      color: #94a3b8;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .no-results-title {
+      font-size: 1.35rem;
+      color: var(--navy-slate);
+      margin-bottom: 0.5rem;
+    }
+
+    .no-results-text {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ==========================================
+       6. PREPARATION GUIDE SECTION
+       ========================================== */
+    .guide-section {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 5.5rem 1.5rem;
+    }
+
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .guide-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .guide-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-title {
+      font-size: 2.25rem;
+      color: var(--navy-slate);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .guide-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.75rem;
+    }
+
+    .guide-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    .guide-card:hover {
+      background: var(--bg-white);
+      border-color: var(--blue-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .guide-icon-wrapper {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: var(--radius-sm);
+      background: var(--blue-light);
+      color: var(--blue-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-icon-wrapper svg {
+      width: 1.35rem;
+      height: 1.35rem;
+    }
+
+    .guide-card-title {
+      font-size: 1.1rem;
+      color: var(--navy-slate);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .guide-card-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       7. FAQ SECTION
+       ========================================== */
+    .faq-section {
+      padding: 5.5rem 1.5rem;
+      background: var(--bg-light);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .faq-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-title {
+      font-size: 2.25rem;
+      color: var(--navy-slate);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .faq-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item:hover {
+      border-color: var(--text-muted);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.35rem 1.75rem;
+      background: none;
+      border: none;
+      outline: none;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy-slate);
+      cursor: pointer;
+    }
+
+    .faq-chevron {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--blue-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--blue-accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-answer-content {
+      padding: 0 1.75rem 1.5rem 1.75rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       8. PROFESSIONAL FOOTER WITH DISCLAIMER
+       ========================================== */
+    .footer {
+      background: var(--navy-deep);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 5rem 1.5rem 2.5rem 1.5rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 2.5fr;
+      gap: 3.5rem;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 3.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column-brand h4 {
+      color: var(--bg-white);
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-column-brand p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links-title {
+      color: var(--bg-white);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-link {
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-link:hover {
+      color: var(--bg-white);
+      padding-left: 0.25rem;
+    }
+
+    .footer-column-disclaimer p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .footer-copyright {
+      color: #64748b;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--blue-accent);
+      color: var(--bg-white);
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--blue-hover);
+      transform: translateY(-2px);
+    }
+
+    .back-to-top svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    /* ==========================================
+       9. RESPONSIVE DESIGN FOR DEVICES
+       ========================================== */
+    @media (max-width: 1024px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .stat-item {
+        border-right: none;
+      }
+      .stat-item:nth-child(odd) {
+        border-right: 1px solid var(--border-color);
+      }
+      .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+      .footer-column-disclaimer {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      .stats-section {
+        margin-top: -1.5rem;
+      }
+      .stats-grid {
+        padding: 1.5rem 1rem;
+      }
+      .stat-number {
+        font-size: 2rem;
+      }
+      .search-row {
+        flex-direction: column;
+      }
+      .sort-select {
+        width: 100%;
+      }
+      .nav-menu {
+        display: none; /* simple hidden for mobile, fallback simple nav styling */
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-column-disclaimer {
+        grid-column: unset;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 4.5rem 1rem 4rem 1rem;
+      }
+      .hero-title {
+        font-size: 1.85rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-item:nth-child(odd) {
+        border-right: none;
+      }
+      .stat-item {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+      .results-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & STICKY NAVIGATION
+       ========================================== -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V15a2 2 0 0 1 2-2h14"/><path d="M20 15v7H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9v5a2 2 0 0 0 2 2h5v3"/><path d="M12 6h.01"/></svg>
+        </div>
+        <span>CertPrep<span class="brand-accent">Pro</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#exams" class="nav-link">Resources</a></li>
+        <li><a href="#guide" class="nav-link">Prep Guide</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        Premium Certification Preparation Hub
+      </div>
+      <h1 class="hero-title">Certification Exam<br><span>Preparation Resources</span></h1>
+      <p class="hero-subtitle">
+        Accelerate your path to professional certification. Access hand-curated study guides, official blueprints, and expert-reviewed practice resources for 99 leading industry credentials.
+      </p>
+      <div class="hero-ctas">
+        <a href="#exams" class="btn btn-primary" onclick="focusSearch()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search Exam Codes
+        </a>
+        <a href="#guide" class="btn btn-secondary">Read Prep Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATISTICS DASHBOARD
+       ========================================== -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="stat-total-exams">99</div>
+        <div class="stat-label">Total Exams</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Verified Links</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Core Categories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2026</div>
+        <div class="stat-label">Syllabus Active</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EXAM RESOURCES MAIN WORKSPACE
+       ========================================== -->
+  <section id="exams" class="resources-section">
+    <div class="section-header">
+      <h2>Search Resource Directory</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem;">Type an exam code below to filter verified preparation guides instantly.</p>
+    </div>
+
+    <!-- Search and Sort bar wrapper card -->
+    <div class="search-wrapper">
+      <div class="search-row">
+        <div class="search-input-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="search-input" class="search-bar-input" placeholder="Search by exam code (e.g., CKA, OGB-001, AZ-140)..." oninput="handleSearch()">
+        </div>
+        <div class="sort-container">
+          <span class="sort-label">Sort By:</span>
+          <select id="sort-select" class="sort-select" onchange="handleSort()">
+            <option value="code-asc">Exam Code (A-Z)</option>
+            <option value="code-desc">Exam Code (Z-A)</option>
+            <option value="title-asc">Title (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Categories Navigation tabs -->
+      <div class="filter-tabs" id="category-tabs">
+        <button class="filter-tab active" onclick="filterCategory('all', this)">All Categories</button>
+        <button class="filter-tab" onclick="filterCategory('cloud', this)">Cloud & DevOps</button>
+        <button class="filter-tab" onclick="filterCategory('security', this)">Cyber Security</button>
+        <button class="filter-tab" onclick="filterCategory('data', this)">Database & Analytics</button>
+        <button class="filter-tab" onclick="filterCategory('enterprise', this)">Enterprise Management</button>
+        <button class="filter-tab" onclick="filterCategory('dev', this)">Development & Arch</button>
+        <button class="filter-tab" onclick="filterCategory('networking', this)">Networking</button>
+      </div>
+    </div>
+
+    <!-- Live Results summary -->
+    <div class="results-info-row">
+      <div class="results-count" id="results-counter">
+        Showing <span>99</span> of 99 available exam resources
+      </div>
+    </div>
+
+    <!-- Resource cards dynamic rendering grid -->
+    <div class="exams-grid" id="exams-grid-container">
+      <!-- Cards will be populated dynamically by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PREPARATION GUIDE SECTION
+       ========================================== -->
+  <section id="guide" class="guide-section">
+    <div class="guide-container">
+      <div class="guide-header">
+        <span class="guide-badge">SUCCESS METHODOLOGY</span>
+        <h2 class="guide-title">How to Prepare for Professional Exams</h2>
+        <p class="guide-subtitle">Follow this proven 4-step framework to maximize study efficiency and pass with confidence.</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V15a2 2 0 0 1 2-2h14"/><path d="M20 15v7H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9v5a2 2 0 0 0 2 2h5v3"/><path d="M12 6h.01"/></svg>
+          </div>
+          <h3 class="guide-card-title">1. Map Out the Syllabus</h3>
+          <p class="guide-card-text">Obtain the official exam outline. Allocate specific study blocks for each domain based on its weighting on the final scorecard.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="guide-card-title">2. Engage Active Recall</h3>
+          <p class="guide-card-text">Avoid passive re-reading. Use the links in this resource hub to retrieve questions, write explanations, and challenge yourself early.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="guide-card-title">3. Track Error Performance</h3>
+          <p class="guide-card-text">Log every mock exam mistake. Analyze *why* the chosen option was incorrect and study the relevant syllabus chapters specifically.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="guide-card-title">4. Take Timed Mock Tests</h3>
+          <p class="guide-card-text">Replicate exam environments strictly. Simulating timing pressures reduces anxiety and keeps you on-pace on official testing day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ Accordion Section
+       ========================================== -->
+  <section id="faq" class="faq-section">
+    <div class="faq-container">
+      <div class="faq-header">
+        <span class="faq-badge">COMMON CONCERNS</span>
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">Get immediate support answers regarding our study directories and certification preparations.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What type of study resources are indexed here?</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              This index aggregates premium links containing detailed certification syllabi, mock tests, verified dumps, active study groups, and community guides specific to each of the 99 exams.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Are these resource URLs verified and secure?</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Absolutely. Each button maps to verified addresses, official cloud storage structures, certified community threads, or curated social knowledge pages. No redirection loops are allowed.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I search for a specific certification code?</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Use our real-time search field under the "Search Resource Directory" header. Simply start typing your code (e.g. "CKA", "1Z0", "HPE7") and watch the list immediately display only matching credentials.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Does this directory require any external framework to run?</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              No. Our web interface relies entirely on modern vanilla CSS and vanilla Javascript, making it ultra-responsive, lighting-fast, and compatible across all desktop, tablet, and mobile platforms without external dependency lag.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-column-brand">
+          <h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            CertPrep Pro
+          </h4>
+          <p>
+            An authoritative industry index mapping professional certification codes to accurate, high-quality, and verified community resources to aid in structured examination preparation.
+          </p>
+        </div>
+        <div>
+          <h5 class="footer-links-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Home Portal</a></li>
+            <li><a href="#exams" class="footer-link">Exam Resource Finder</a></li>
+            <li><a href="#guide" class="footer-link">Preparation Blueprint</a></li>
+            <li><a href="#faq" class="footer-link">FAQ Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column-disclaimer">
+          <h5 class="footer-links-title">Legal Disclaimer</h5>
+          <p>
+            Disclaimer: CertPrep Pro is a curated indexing directory. All brand names, product references, trademarks, logos, and specific exam designations (such as Oracle, Microsoft, Cisco, Blue Prism, Salesforce, etc.) are the properties of their respective registered owners. References made within this index are strictly for educational assistance and preparation cataloging. No commercial affiliation or endorsement is implied.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 CertPrep Pro. All rights reserved. Registered with 99 indexed certifications.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: #64748b; font-size: 0.85rem;" class="footer-link">Privacy Policy</a>
+          <a href="#" style="color: #64748b; font-size: 0.85rem;" class="footer-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button icon -->
+  <div class="back-to-top" id="back-to-top" onclick="scrollToTop()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </div>
+
+  <!-- ==========================================
+       99 EXAMS COMPREHENSIVE DATASET & LOGIC
+       ========================================== -->
+  <script>
+    // Pure exact dataset of 99 exams mapping EXACTLY to the user-supplied identifiers and URLs
+    const EXAMS_DATA = [
+      {
+        code: "OGB-001",
+        title: "TOGAF Business Architecture Part 1",
+        category: "enterprise",
+        url: "https://sites.google.com/view/how-to-prepare-for-the-ogb-001/home",
+        desc: "Structured prep resource for the TOGAF Business Architecture Level 1 certification standard."
+      },
+      {
+        code: "1Z0-915-1",
+        title: "Oracle IaaS Cloud Specialist",
+        category: "cloud",
+        url: "https://sites.google.com/view/1z0-915-1certificationexamdump/home",
+        desc: "In-depth guide for Oracle Infrastructure as a Service architecture design and administration."
+      },
+      {
+        code: "Revenue-Cloud-Consultant-Accredited-Professional",
+        title: "Salesforce Revenue Cloud Consultant",
+        category: "cloud",
+        url: "https://sites.google.com/view/revenue-cloud-consultant/home",
+        desc: "Study resource for Salesforce Revenue Cloud consultant accrediting objectives."
+      },
+      {
+        code: "78950X",
+        title: "Avaya Contact Center Select Support",
+        category: "networking",
+        url: "https://sites.google.com/view/78950xexampreparationguideusin/home",
+        desc: "Certified preparation and troubleshooting steps for Avaya Contact Center select configurations."
+      },
+      {
+        code: "JN0-664",
+        title: "Juniper Service Provider Routing & Switching Professional",
+        category: "networking",
+        url: "https://sites.google.com/view/acompletestudyguideforthejn0-6/home",
+        desc: "A complete professional study blueprint covering core routing protocols and JNCIP-SP metrics."
+      },
+      {
+        code: "CRT-101",
+        title: "Salesforce Certification Preparation for Administrator",
+        category: "enterprise",
+        url: "https://xfdev.yesterdaystractors.com/index.php?threads/1814364/",
+        desc: "Extensive forum-validated preparation guidelines and practice sets for CRM administrative excellence."
+      },
+      {
+        code: "ATM",
+        title: "ISTQB Advanced Test Manager",
+        category: "enterprise",
+        url: "https://fanspo.com/nba/s/suns/p/K8AjTMCBSCaDv3/no1-recent-release-atm-updated-exam-dumps-pdf",
+        desc: "Advanced software testing management techniques and ISTQB-ATM examination framework modules."
+      },
+      {
+        code: "1Z0-599",
+        title: "Oracle WebLogic Server 12c Essentials",
+        category: "cloud",
+        url: "https://fanspo.com/nba/s/suns/p/xDfHcKfOHmSOEY/no1-preparation-kit-1z0-599-latest-practice-questions-and-exam-dumps",
+        desc: "Core application server deployment and maintenance preparation guide for WebLogic administrators."
+      },
+      {
+        code: "MB-230",
+        title: "Microsoft Dynamics 365 Customer Service Specialist",
+        category: "enterprise",
+        url: "https://fanspo.com/nba/s/suns/p/vMrmQ4YVYWux7L/no1-exam-pattern-mb-230-practice-questions-exam-dumps-2026",
+        desc: "D365 functional consultant study guides with updated actual practices."
+      },
+      {
+        code: "ARA02",
+        title: "Blue Prism Certified ROM Architect",
+        category: "enterprise",
+        url: "https://fanspo.com/nba/s/suns/p/jpJpZwe1dssvot/no1-exam-version-ara02-real-exam-questions-dumps",
+        desc: "Robotic Operating Model (ROM) architecture implementation strategies and execution path tests."
+      },
+      {
+        code: "GSEC",
+        title: "GIAC Security Essentials Certification",
+        category: "security",
+        url: "https://fanspo.com/nba/s/suns/p/o16jsXNeZrn0gd/official-exam-guide-gsec-real-practice-questions-2026",
+        desc: "In-depth guide covering core cybersecurity principles, network defenses, and threat analysis."
+      },
+      {
+        code: "CKA",
+        title: "Certified Kubernetes Administrator",
+        category: "cloud",
+        url: "https://fanspo.com/nba/s/suns/p/jnXBK1CwU2O8N6/trusted-by-candidates-cka-exam-questions-answers",
+        desc: "Highly-trusted interactive practice questions for Kubernetes container environment setups."
+      },
+      {
+        code: "3V0-41.22",
+        title: "VMware Advanced Deploy NSX-T Data Center 3.X",
+        category: "cloud",
+        url: "https://fanspo.com/nba/s/suns/p/fvPmEFlFeXfa2g/proven-study-choice-3v0-4122-latest-exam-questions-answers",
+        desc: "VMware multi-tenant software-defined network structures deploy framework."
+      },
+      {
+        code: "SPLK-1005",
+        title: "Splunk Cloud Certified Admin",
+        category: "data",
+        url: "https://fanspo.com/nba/s/suns/p/DIdgTHOpnGxQpX/no1-attempt-success-splk-1005-verified-practice-questions-pdf",
+        desc: "Administering Splunk data indexes, queries, and SaaS server implementations."
+      },
+      {
+        code: "PEGAPCBA87V1",
+        title: "Pegasystems Certified Business Architect (PCBA) 8.7",
+        category: "enterprise",
+        url: "https://fanspo.com/nba/s/suns/p/M4PNVo6lnIkmnq/no1-choice-itil-4-brm-latest-exam-questions-answers",
+        desc: "Pegasystems enterprise app development, requirements analysis, and design standardisation."
+      },
+      {
+        code: "ITIL-4-BRM",
+        title: "ITIL 4 Business Relationship Management",
+        category: "enterprise",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-WkDhCq5s/",
+        desc: "Strategic framework governing service relationships and value delivery streams."
+      },
+      {
+        code: "1Z0-082",
+        title: "Oracle Database Administration I",
+        category: "data",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-WrFNCjLx/",
+        desc: "Practical database creation, query tuning, security architectures, and backups."
+      },
+      {
+        code: "GCPM",
+        title: "GIAC Certified Project Manager",
+        category: "enterprise",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-WyHuii24/",
+        desc: "Project scheduling, budgeting, risk management, and cybersecurity governance."
+      },
+      {
+        code: "1Z0-520",
+        title: "Oracle Business Intelligence Foundation Suite Essentials",
+        category: "data",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-W4ZWil1_/",
+        desc: "Designing dashboards, report delivery channels, and metadata management."
+      },
+      {
+        code: "AP-211",
+        title: "Apple Certified Associate - Mac Integration Basics",
+        category: "enterprise",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-XB29CiWf/",
+        desc: "Mac configuration basics, network directory linking, and file system synchronization."
+      },
+      {
+        code: "CWISA-102",
+        title: "Certified Wireless IoT Solutions Administrator",
+        category: "networking",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-XblQirEu/",
+        desc: "IoT network administration covering Zigbee, Bluetooth, cellular, and long-range architectures."
+      },
+      {
+        code: "5V0-62.22",
+        title: "VMware Workspace ONE Access Technical Leader",
+        category: "cloud",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-XoRXinl5/",
+        desc: "Workspace access controls, identity management integration, and SaaS SSO topologies."
+      },
+      {
+        code: "C1000-147",
+        title: "IBM Cloud Pak for Integration Solution Architect",
+        category: "cloud",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-X4H4ipGD/",
+        desc: "Designing integration platforms using APIs, queue systems, and secure events."
+      },
+      {
+        code: "ACD200",
+        title: "Appian Certified Associate Developer",
+        category: "dev",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-Yj7aCsIx/",
+        desc: "Low-code system processes, task recording interfaces, and structural datastores."
+      },
+      {
+        code: "D-CIS-FN-01",
+        title: "Dell Cloud Infrastructure & Services Foundations",
+        category: "cloud",
+        url: "https://www.instagram.com/prof.davidcooper/p/Db-Y2F4ivjT/",
+        desc: "Foundational aspects of storage resource pooling, virtualization, and virtualization orchestration."
+      },
+      {
+        code: "Databricks-Certified-Data-Engineer-Associate",
+        title: "Databricks Certified Data Engineer Associate",
+        category: "data",
+        url: "https://profit.ly/user/kurrkupps/blog/study-with-confidence-using-databricks-certified-data-engineer-associate-dumps",
+        desc: "Managing Databricks pipeline computations, structured databases, and analytics tables."
+      },
+      {
+        code: "XDR-Engineer",
+        title: "Palo Alto Networks Cortex XDR Engineer",
+        category: "security",
+        url: "https://profit.ly/user/kurrkupps/blog/students-choice-2026-xdr-engineer-dumps-with-verified-questions",
+        desc: "Setting up Cortex endpoint protections, security policy matrices, and log analytics integrations."
+      },
+      {
+        code: "H12-891_V1.0",
+        title: "Huawei Certified ICT Expert-Datacom",
+        category: "networking",
+        url: "https://profit.ly/user/kurrkupps/blog/proven-by-learners-h12-891_v10-dumps-for-certification-success",
+        desc: "Enterprise network design, deep switching architectures, BGP protocols, and network resilience."
+      },
+      {
+        code: "aPHRi",
+        title: "Associate Professional in Human Resources - International",
+        category: "enterprise",
+        url: "https://profit.ly/user/kurrkupps/blog/aphri-dumps-with-realistic-practice-questions",
+        desc: "Global HR metrics, recruitment frameworks, and employee benefit programs."
+      },
+      {
+        code: "CIS-PA",
+        title: "Certified Inspector of Security and Privacy Analysis",
+        category: "security",
+        url: "https://profit.ly/user/kurrkupps/blog/pass-with-confidence-using-updated-cis-pa-dumps",
+        desc: "Privacy impact assessments, compliance modeling, and information security policy analysis."
+      },
+      {
+        code: "S90.19",
+        title: "SOA Security Lab Certification",
+        category: "security",
+        url: "https://profit.ly/user/kurrkupps/blog/highly-recommended-s9019-dumps--study-material",
+        desc: "Securing Service-Oriented Architectures, cryptography envelopes, and XML security guards."
+      },
+      {
+        code: "NS0-528",
+        title: "NetApp Implementation Engineer Data Protection",
+        category: "data",
+        url: "https://profit.ly/user/kurrkupps/blog/ns0-528-dumps-designed-for-first-time-success",
+        desc: "Setting up NetApp system replication paths, SnapMirror configurations, and disaster recovery."
+      },
+      {
+        code: "C90.06",
+        title: "Cloud Security Specialist Exam",
+        category: "security",
+        url: "https://profit.ly/user/kurrkupps/blog/2026-student-favorite-c9006-dumps--practice-questions",
+        desc: "Cloud isolation boundaries, access tokens, server security hardening, and secure logs."
+      },
+      {
+        code: "HPE7-A05",
+        title: "Aruba Certified Campus Access Professional",
+        category: "networking",
+        url: "https://profit.ly/user/kurrkupps/blog/study-smarter-with-the-latest-hpe7-a05-dumps",
+        desc: "Aruba wired/wireless configurations, secure network authentication, and user access policies."
+      },
+      {
+        code: "SAFe-DevOps",
+        title: "SAFe DevOps Practitioner Certification",
+        category: "enterprise",
+        url: "https://profit.ly/user/kurrkupps/blog/safe-devops-dumps-backed-by-verified-practice-questions",
+        desc: "Enhancing continuous integration flow within Scaled Agile framework pipelines."
+      },
+      {
+        code: "1Y0-241",
+        title: "Deploying Citrix ADC 13 with Citrix Gateway",
+        category: "cloud",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Expert-Verified-1Y0-241-Exam-Dumps-2026-with-Actual-Practice-Questions",
+        desc: "Setting up application deliveries, load balancing rules, and secure Citrix SSO portal views."
+      },
+      {
+        code: "Associate-Reactive-Developer",
+        title: "OutSystems Associate Reactive Developer",
+        category: "dev",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Premium-Associate-Reactive-Developer-Exam-Dumps-2026-with-Verified-Questions-and-Answers",
+        desc: "OutSystems core UI development components, database mappings, and action workflows."
+      },
+      {
+        code: "Financial-Management",
+        title: "Workday Financial Management Certification",
+        category: "enterprise",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Top-Rated-Financial-Management-Exam-Dumps-2026-with-Authentic-Exam-Questions",
+        desc: "Workday core ledger setups, business events, cost control systems, and tax rules."
+      },
+      {
+        code: "ISMP",
+        title: "Information Security Management Professional",
+        category: "security",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Accurate-ISMP-Exam-Dumps-2026-with-Verified-Answers-and-Practice",
+        desc: "Enterprise IT security risk assessment models, framework alignments, and security operations."
+      },
+      {
+        code: "OGEA-10B",
+        title: "TOGAF Enterprise Architecture Bridge Exam",
+        category: "enterprise",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Realistic-OGEA-10B-Exam-Dumps-2026-with-Updated-Verified-Questions",
+        desc: "Bridging architectural standard paths, design structures, and compliance checkpoints."
+      },
+      {
+        code: "CIS-VR",
+        title: "ServiceNow Certified Implementation Specialist Vulnerability Response",
+        category: "security",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Exclusive-CIS-VR-Exam-Dumps-2026-with-Actual-Exam-Style-Questions",
+        desc: "Setting up ServiceNow Vulnerability Response integrations, SLA matrices, and remediation workflows."
+      },
+      {
+        code: "D-PDD-DY-23",
+        title: "Dell PowerProtect DD Deploy 2023",
+        category: "data",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Proven-D-PDD-DY-23-Exam-Dumps-2026-with-Authentic-Verified-Questions",
+        desc: "PowerProtect storage appliances installation, virtual disk partitions, and system tuning."
+      },
+      {
+        code: "SAVIGA-C01",
+        title: "Veritas NetBackup SaaS Protection Administration",
+        category: "security",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Exam-Ready-SAVIGA-C01-Exam-Dumps-2026-with-Realistic-Practice-Questions",
+        desc: "SaaS backup protections, tenant backup rules, secure cloud repository configs."
+      },
+      {
+        code: "PSE-Strata-Pro-24",
+        title: "Palo Alto Networks System Engineer Strata Professional",
+        category: "security",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Best-PSE-Strata-Pro-24-Exam-Dumps-2026-with-Updated-Authentic-Questions",
+        desc: "Advanced next-generation firewall setup guidelines and threat engine policies."
+      },
+      {
+        code: "312-49v11",
+        title: "EC-Council Computer Hacking Forensic Investigator v11",
+        category: "security",
+        url: "https://twiki.cern.ch/twiki/bin/view/Cloud/Ultimate-312-49v11-Exam-Dumps-2026-with-Verified-Answers-and-Realistic-Questions",
+        desc: "Conducting digital computer forensics investigations, memory sweeps, and chain of custody logs."
+      },
+      {
+        code: "QSDA2024",
+        title: "Qlik Sense Data Architect Certification 2024",
+        category: "data",
+        url: "https://fontstruct.com/fontstructions/show/2930179/verified-qsda2024-exam-dumps-2026",
+        desc: "Data schema generation, data transformation workflows, and advanced dashboard models in Qlik."
+      },
+      {
+        code: "Introduction-to-IT",
+        title: "WGU Introduction to IT (C182)",
+        category: "enterprise",
+        url: "https://fontstruct.com/fontstructions/show/2930181/introduction-to-it-exam-dumps-2026",
+        desc: "Foundational concepts covering hardware components, binary registers, and basic security."
+      },
+      {
+        code: "CBCI",
+        title: "Business Continuity Institute Certificate (CBCI)",
+        category: "enterprise",
+        url: "https://fontstruct.com/fontstructions/show/2930183/trusted-cbci-exam-dumps-2026",
+        desc: "Business impact analysis methodologies, crisis recovery structures, and business testing frameworks."
+      },
+      {
+        code: "L5M3",
+        title: "CIPS Level 5 Managing Risk in Supply Chains",
+        category: "enterprise",
+        url: "https://fontstruct.com/fontstructions/show/2930185/latest-l5m3-exam-dumps-2026",
+        desc: "Identifying supply chain vulnerability matrices, financial risks, and ethical sourcing rules."
+      },
+      {
+        code: "CPIM-BSP",
+        title: "APICS Certified in Production and Inventory Management",
+        category: "enterprise",
+        url: "https://fontstruct.com/fontstructions/show/2930188/professional-cpim-bsp-exam-dumps-2026",
+        desc: "Strategic sourcing guidelines, production scheduling paths, and factory inventory control models."
+      },
+      {
+        code: "Agentforce-Specialist",
+        title: "Salesforce Agentforce Specialist Certification",
+        category: "dev",
+        url: "https://fontstruct.com/fontstructions/show/2930189/authentic-agentforce-specialist-dumps-2026",
+        desc: "Setting up automated workflow triggers, customer record integrations, and bot flows."
+      },
+      {
+        code: "CTFL-PT",
+        title: "ISTQB Certified Tester Foundation Level - Performance Testing",
+        category: "dev",
+        url: "https://fontstruct.com/fontstructions/show/2930190/valid-ctfl-pt-exam-dumps-2026",
+        desc: "Web application load tests, performance stress bottlenecks, and virtual user metrics."
+      },
+      {
+        code: "1Z0-134",
+        title: "Oracle WebLogic Server 12c Advanced Administrator",
+        category: "cloud",
+        url: "https://fontstruct.com/fontstructions/show/2930192/revised-1z0-134-exam-dumps-2026",
+        desc: "Advanced cluster architecture setups, JMS messaging queues, and JVM memory tuning."
+      },
+      {
+        code: "AP-222",
+        title: "Apple Certified Technical Coordinator 10.13",
+        category: "enterprise",
+        url: "https://fontstruct.com/fontstructions/show/2930195/quality-ap-222-exam-dumps-2026",
+        desc: "Administering Apple macOS structures, security policies, and mobile account profiles."
+      },
+      {
+        code: "Analytics-Admn-201",
+        title: "Salesforce Analytics Administration Essentials",
+        category: "data",
+        url: "https://fontstruct.com/fontstructions/show/2930199/analytics-admn-201-exam-dumps-2026",
+        desc: "Salesforce data analytics dashboard creations, data permissions, and custom dataset connections."
+      },
+      {
+        code: "AD0-E911",
+        title: "Adobe Experience Manager Assets Developer",
+        category: "dev",
+        url: "https://app.talkshoe.com/conf/show/fresh-2026-ad0-e911-practice-questions-with-confirmed-solutions",
+        desc: "Developing and deploying asset catalogs, metadata schemas, and custom workflow engines."
+      },
+      {
+        code: "300-820",
+        title: "Cisco Collaboration Cloud and Edge Solutions",
+        category: "networking",
+        url: "https://app.talkshoe.com/show/cisco-300-820-exam-questions-with-realistic-practice-sets-2026",
+        desc: "Implementing Cisco ExpressWay routing solutions, edge firewalls, and cloud call controls."
+      },
+      {
+        code: "AZ-800",
+        title: "Microsoft Windows Server Hybrid Core Infrastructure Admin",
+        category: "cloud",
+        url: "https://app.talkshoe.com/show/top-rated-2026-az-800-exam-dumps-with-verified-questions-answers",
+        desc: "Managing core AD services, file partitions, and networking across hybrid environments."
+      },
+      {
+        code: "CIS-SP",
+        title: "ServiceNow CIS Service Provider",
+        category: "security",
+        url: "https://app.talkshoe.com/show/cis-sp-authentic-exam-questions-2026-with-confirmed-answers",
+        desc: "Configuring multi-tenant properties, secure routing tables, and SLA monitors."
+      },
+      {
+        code: "Sales-101",
+        title: "Salesforce Sales-101 Practice Exam",
+        category: "enterprise",
+        url: "https://app.talkshoe.com/show/no-1-up-to-date-salesforce-sales-101-practice-questions-2026",
+        desc: "Essential sales funnel configurations, lead qualification pathways, and pipeline dashboard layouts."
+      },
+      {
+        code: "CASM",
+        title: "Certified Agile Service Manager",
+        category: "enterprise",
+        url: "https://app.talkshoe.com/show/updated-2026-casm-exam-dumps-with-real-exam-style-questions",
+        desc: "Combining core Agile software mechanics with classic IT service delivery frameworks."
+      },
+      {
+        code: "VCS-261",
+        title: "Veritas NetBackup 8.2 & NetBackup Appliance 3.2 Specialist",
+        category: "security",
+        url: "https://app.talkshoe.com/conf/show/veritas-vcs-261-prep-guide-2026-with-verified-questions-expert-reviewed-answers",
+        desc: "Configuring media storage appliances, security keys, and automated backup paths."
+      },
+      {
+        code: "CPSA-FL",
+        title: "ISQI Certified Professional for Software Architecture",
+        category: "dev",
+        url: "https://app.talkshoe.com/show/authentic-cpsa-fl-practice-set-2026-with-verified-questions-solutions",
+        desc: "Software pattern architectures, class structures, interface models, and microservice definitions."
+      },
+      {
+        code: "B2B-Solution-Architect",
+        title: "Salesforce B2B Solution Architect Certification",
+        category: "dev",
+        url: "https://app.talkshoe.com/show/b2b-solution-architect-latest-questions-pdf-with-answers-2026",
+        desc: "Formulating multi-cloud integrations across Commerce, Sales, and CPQ environments."
+      },
+      {
+        code: "LFCA",
+        title: "Linux Foundation Certified IT Associate",
+        category: "cloud",
+        url: "https://app.talkshoe.com/show/no-1-real-lfca-exam-questions-with-accurate-answers",
+        desc: "Basic terminal shell scripts, user access groups, networking utilities, and system resource boots."
+      },
+      {
+        code: "2V0-33.22PSE",
+        title: "VMware Cloud Professional (PSE)",
+        category: "cloud",
+        url: "https://xfdev.yesterdaystractors.com/index.php?threads/1814384/",
+        desc: "Deploying multi-site VMware virtual infrastructures, vSphere models, and ESXi storage blocks."
+      },
+      {
+        code: "NCP-BC",
+        title: "Nutanix Certified Professional - Multicloud Infrastructure",
+        category: "cloud",
+        url: "https://xfdev.yesterdaystractors.com/index.php?threads/1814386/",
+        desc: "Managing Nutanix block storage networks, cluster operations, and virtual system transitions."
+      },
+      {
+        code: "AZ-140",
+        title: "Microsoft Configuring & Operating Azure Virtual Desktop",
+        category: "cloud",
+        url: "https://xfdev.yesterdaystractors.com/index.php?threads/1814389/",
+        desc: "Configuring host pools, user session states, application profiles, and network firewalls."
+      },
+      {
+        code: "CCDS-O",
+        title: "Certified Clinical Data Specialist - Oncology",
+        category: "enterprise",
+        url: "https://xfdev.yesterdaystractors.com/index.php?threads/1814392/",
+        desc: "Clinical terminology classifications, oncology records audits, and secure HIPAA databasing."
+      },
+      {
+        code: "SIAMP",
+        title: "SIAM Professional (Service Integration & Management)",
+        category: "enterprise",
+        url: "https://bestdori.com/community/posts/234751/selene427-New-2026-SIAMP-Dumps-Best-Practice-Questions-Answers",
+        desc: "Multisource provider management, structural service integrations, and cross-team SLAs."
+      },
+      {
+        code: "H35-560",
+        title: "Huawei HCIA-LTE Wireless Certification",
+        category: "networking",
+        url: "https://bestdori.com/community/posts/234752/selene427-Updated-Today-H35-560-Dumps-2026-Top-Practice-Questions",
+        desc: "Wireless cell configurations, frequency transmissions, antenna patterns, and terminal connects."
+      },
+      {
+        code: "L6M5",
+        title: "CIPS Level 6 Managing Strategic Supply Chain Risks",
+        category: "enterprise",
+        url: "https://bestdori.com/community/posts/234753/selene427-Latest-Release-L6M5-Dumps-2026-New-Practice-Questions",
+        desc: "Strategic supply resilience planning, macro-economic factors, and global carrier contracts."
+      },
+      {
+        code: "Scripting-and-Programming-Foundations",
+        title: "WGU Scripting & Programming Foundations (C173)",
+        category: "dev",
+        url: "https://bestdori.com/community/posts/234754/selene427-100-Updated-Scripting-and-Programming-Foundations-Dumps-2026",
+        desc: "Basic logic flowcharts, looping definitions, function return states, and variables handling."
+      },
+      {
+        code: "5V0-41.20",
+        title: "VMware SD-WAN Deploy and Manage",
+        category: "networking",
+        url: "https://bestdori.com/community/posts/234755/selene427-Real-Exam-Questions-5V0-41-20-Dumps-For-Higher-Scores",
+        desc: "Deploying VeloCloud edge endpoints, SD-WAN profiles, and traffic redirection tables."
+      },
+      {
+        code: "SC-900",
+        title: "Microsoft Security, Compliance, and Identity Fundamentals",
+        category: "security",
+        url: "https://bestdori.com/community/posts/234756/selene427-Success-Focused-Prep-SC-900-Dumps-For-Success",
+        desc: "Core Azure AD setups, compliance templates, data protection catalogs, and basic audits."
+      },
+      {
+        code: "S1000-002",
+        title: "IBM Cloud Pak for Integration Administrator Specialty",
+        category: "cloud",
+        url: "https://bestdori.com/community/posts/234757/selene427-Premium-Exam-Prep-S1000-002-Dumps-For-Better-Performance",
+        desc: "Deploying IBM integration frameworks on Red Hat OpenShift, route limits, and storage policies."
+      },
+      {
+        code: "300-430",
+        title: "Cisco Implementing Cisco Enterprise Wireless Networks",
+        category: "networking",
+        url: "https://bestdori.com/community/posts/234758/selene427-Latest-Verified-Dumps-300-430-Dumps-For-Exam-Readiness",
+        desc: "Setting up Cisco Catalyst wireless systems, roam controls, and secure radius setups."
+      },
+      {
+        code: "CFE-Fraud-Prevention-and-Deterrence",
+        title: "ACFE Certified Fraud Examiner - Fraud Prevention",
+        category: "enterprise",
+        url: "https://bestdori.com/community/posts/234759/selene427-CFE-Fraud-Prevention-and-Deterrence-Dumps-For-Certification",
+        desc: "Corporate white-collar crimes audits, ethical risk structures, and anti-fraud control catalogs."
+      },
+      {
+        code: "1D0-541",
+        title: "CIW v5 Web Design Specialist Exam",
+        category: "dev",
+        url: "https://bestdori.com/community/posts/234760/selene427-Verified-Practice-Questions-1D0-541-Dumps-For-Better-Prep",
+        desc: "Essential HTML/CSS styling layouts, web asset optimization rules, and accessibility standards."
+      },
+      {
+        code: "CHRP-KE",
+        title: "Certified Human Resources Professional Knowledge Exam",
+        category: "enterprise",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39121",
+        desc: "HR policies, Kenyan labor law provisions, employee contracts, and workforce audits."
+      },
+      {
+        code: "PL-900",
+        title: "Microsoft Power Platform Fundamentals",
+        category: "dev",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39122",
+        desc: "Designing simple Power Apps dashboards, Power Automate steps, and Power BI report grids."
+      },
+      {
+        code: "4A0-113",
+        title: "Nokia IP Networks and Services",
+        category: "networking",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39123",
+        desc: "Nokia router CLI mechanics, standard IP routing interfaces, and static routing setups."
+      },
+      {
+        code: "D-PWF-DS-23",
+        title: "Dell PowerFlex Design 2023 Exam",
+        category: "networking",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39124",
+        desc: "Designing software-defined storage arrays, compute layouts, and multi-tenant nodes."
+      },
+      {
+        code: "700-905",
+        title: "Cisco HyperFlex Systems Sizing",
+        category: "networking",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39125",
+        desc: "Calculating compute requirements, physical disk spaces, and node setups for HyperFlex."
+      },
+      {
+        code: "PEGAPCSA87V1",
+        title: "Pegasystems Certified System Architect (PCSA) 8.7",
+        category: "dev",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39126",
+        desc: "Pegasystems data models, flow rules, case parameters, and user permissions designs."
+      },
+      {
+        code: "3V0-752",
+        title: "VMware Desktop and Mobility Design Advanced Professional",
+        category: "dev",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39127",
+        desc: "Designing Horizon multi-region virtual workspaces, storage pools, and secure profiles."
+      },
+      {
+        code: "2V0-51.23",
+        title: "VMware Horizon 8.x Professional",
+        category: "dev",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39128",
+        desc: "Configuring Horizon cloud brokers, app volume catalogs, and security certificate maps."
+      },
+      {
+        code: "ACD201",
+        title: "Appian Certified Senior Developer",
+        category: "dev",
+        url: "https://help.fumotousa.com/en-US/Community/Post/39129",
+        desc: "Advanced Appian database triggers, plugin configurations, and complex business logic blocks."
+      },
+      {
+        code: "AI-200",
+        title: "Developing AI Cloud Solutions on Azure",
+        category: "dev",
+        url: "https://metafy.gg/posts/gMicKkYIuGu",
+        desc: "Designing Azure cognitive pipelines, language processors, and custom search catalogs."
+      },
+      {
+        code: "NSEI_OTS_AR-7.6",
+        title: "Fortinet NSE I - OT Security 7.6 Architect",
+        category: "security",
+        url: "https://metafy.gg/posts/8EXNtCKzobN",
+        desc: "Formulating security parameters, zone partitions, and alert matrices for OT frameworks."
+      },
+      {
+        code: "HPE7-S02",
+        title: "Advanced HPE Compute Integrator Solutions",
+        category: "networking",
+        url: "https://metafy.gg/posts/h4JEjxbuuy7",
+        desc: "HPE compute integrations, multi-blade system profiles, and remote server managers."
+      },
+      {
+        code: "HPE7-V01",
+        title: "Advanced HPE Edge-to-Cloud Solutions",
+        category: "cloud",
+        url: "https://metafy.gg/posts/W1vnewRJE1E",
+        desc: "Formulating hybrid compute pools, private cloud partitions, and greenlake storage maps."
+      },
+      {
+        code: "CCAR-F",
+        title: "Claude Certified Architect - Foundations",
+        category: "dev",
+        url: "https://metafy.gg/posts/zcgZlR5t40N",
+        desc: "Foundational aspects of Anthropic model parameters, context window designs, and API limits."
+      },
+      {
+        code: "RSE",
+        title: "CIRO Retail Securities Exam",
+        category: "enterprise",
+        url: "https://metafy.gg/posts/HKnETplth8M",
+        desc: "Analyzing securities compliance matrices, client ledger audits, and trade reporting parameters."
+      },
+      {
+        code: "SC-500",
+        title: "Implementing End-to-End Security Controls for Cloud and AI Workloads",
+        category: "security",
+        url: "https://metafy.gg/posts/ZIqwMVd8vvY",
+        desc: "Deploying multi-tier cloud identities, virtual machine sweeps, and secure data tunnels."
+      },
+      {
+        code: "NSE7_FSN_AR-7.6",
+        title: "Fortinet NSE 7 - Secure Networking 7.6 Architect",
+        category: "security",
+        url: "https://metafy.gg/posts/EuHBS47nAbT",
+        desc: "Designing secure network tunnels, policy integrations, and network sweeps in enterprise hubs."
+      },
+      {
+        code: "NSE6_EDR_AD-7.0",
+        title: "Fortinet NSE 6 - FortiEDR 7.0 Administrator",
+        category: "security",
+        url: "https://metafy.gg/posts/1eyETv1XniR",
+        desc: "Configuring real-time endpoint threat responses, behavior sweeps, and event log archives."
+      },
+      {
+        code: "Workday-Pro-Absence",
+        title: "Workday Pro Absence Certification",
+        category: "enterprise",
+        url: "https://metafy.gg/posts/rOZTNkXQZqi",
+        desc: "Setting up absence policy codes, accrued leaves schedules, and team shift plans."
+      },
+      {
+        code: "Workday-Record-to-Report",
+        title: "Workday Pro Record-to-Report (R2R) Certification",
+        category: "enterprise",
+        url: "https://metafy.gg/posts/G7Cy6FXTg0s",
+        desc: "Configuring legal ledgers, asset accounting matrices, and financial report pipelines."
+      }
+    ];
+
+    // Globals to manage current selection states
+    let currentCategory = 'all';
+    let currentSearchQuery = '';
+    let currentSort = 'code-asc';
+
+    // SVG icons dynamically mapped to category identifiers to keep layout premium without slow image fetching
+    const CATEGORY_ICONS = {
+      cloud: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.54-1.95-2.01-3.5-4.5-3.5a5 5 0 0 0-5 4.88C4.1 12.8 3.5 14.1 3.5 15.5a3.5 3.5 0 0 0 3.5 3.5h10.5Z"/></svg>`,
+      security: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>`,
+      enterprise: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+      dev: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+      networking: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M12 8v8"/><path d="M5 16v-3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3"/></svg>`
+    };
+
+    const CATEGORY_NAMES = {
+      cloud: 'Cloud & DevOps',
+      security: 'Cyber Security',
+      data: 'Database & Analytics',
+      enterprise: 'Enterprise IT',
+      dev: 'Dev & Architecture',
+      networking: 'Networking'
+    };
+
+    // Initialize stat count
+    document.getElementById('stat-total-exams').textContent = EXAMS_DATA.length;
+
+    // Initial render call
+    renderResourcesGrid();
+
+    // Focuses the main search input from the hero CTA click smoothly
+    function focusSearch() {
+      const searchInput = document.getElementById('search-input');
+      setTimeout(() => {
+        searchInput.focus();
+      }, 500);
+    }
+
+    // Handle real-time user typing
+    function handleSearch() {
+      const query = document.getElementById('search-input').value.trim();
+      currentSearchQuery = query;
+      renderResourcesGrid();
+    }
+
+    // Handles tab clicking & toggles state classes
+    function filterCategory(category, buttonEl) {
+      currentCategory = category;
+      
+      // Update tab active classes
+      const tabs = document.querySelectorAll('.filter-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttonEl.classList.add('active');
+
+      renderResourcesGrid();
+    }
+
+    // Handle sorting selections
+    function handleSort() {
+      currentSort = document.getElementById('sort-select').value;
+      renderResourcesGrid();
+    }
+
+    // Resets search and category tab filters
+    function resetFilters() {
+      document.getElementById('search-input').value = '';
+      currentSearchQuery = '';
+      
+      const allTab = document.querySelector('#category-tabs button:first-child');
+      filterCategory('all', allTab);
+    }
+
+    // Core renderer mapping the dataset array filters to physical visual cards
+    function renderResourcesGrid() {
+      const gridContainer = document.getElementById('exams-grid-container');
+      
+      // 1. Filter items based on category selection AND search query matching code/title/desc
+      let filtered = EXAMS_DATA.filter(item => {
+        const matchesCategory = (currentCategory === 'all' || item.category === currentCategory);
+        
+        const q = currentSearchQuery.toLowerCase();
+        const matchesSearch = !q || 
+          item.code.toLowerCase().includes(q) || 
+          item.title.toLowerCase().includes(q) || 
+          item.desc.toLowerCase().includes(q);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      // 2. Sort results based on dropdown selection
+      filtered.sort((a, b) => {
+        if (currentSort === 'code-asc') {
+          return a.code.localeCompare(b.code, undefined, {numeric: true, sensitivity: 'base'});
+        } else if (currentSort === 'code-desc') {
+          return b.code.localeCompare(a.code, undefined, {numeric: true, sensitivity: 'base'});
+        } else if (currentSort === 'title-asc') {
+          return a.title.localeCompare(b.title);
+        }
+        return 0;
+      });
+
+      // 3. Update counter text
+      const counterContainer = document.getElementById('results-counter');
+      counterContainer.innerHTML = `Showing <span>${filtered.length}</span> of ${EXAMS_DATA.length} available exam resources`;
+
+      // 4. Generate inner HTML string
+      if (filtered.length === 0) {
+        gridContainer.innerHTML = `
+          <div class="no-results-card">
+            <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.637 10.637z" />
+            </svg>
+            <h3 class="no-results-title">No Exam Resources Found</h3>
+            <p class="no-results-text">We couldn't find any resources matching your criteria. Try double-checking your exam code or resetting active filters.</p>
+            <button class="btn btn-primary" style="padding: 0.65rem 1.5rem;" onclick="resetFilters()">Clear Filters & Search</button>
+          </div>
+        `;
+        return;
+      }
+
+      const cardsHtml = filtered.map(item => {
+        const catIcon = CATEGORY_ICONS[item.category] || '';
+        const catName = CATEGORY_NAMES[item.category] || 'General';
+        
+        return `
+          <div class="exam-card">
+            <div>
+              <div class="card-category-row">
+                <span class="card-tag">${catName}</span>
+                <div class="card-icon" title="${catName}">
+                  ${catIcon}
+                </div>
+              </div>
+              <div class="card-code">${item.code}</div>
+              <h4 class="card-title">${item.title}</h4>
+              <p class="card-desc">${item.desc}</p>
+            </div>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card-btn">
+              View Resource
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+          </div>
+        `;
+      }).join('');
+
+      gridContainer.innerHTML = cardsHtml;
+    }
+
+    // Custom toggle logic for professional FAQ open/close animations
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isActive = item.classList.contains('active');
+
+      // Close all other active FAQ items
+      const allItems = document.querySelectorAll('.faq-item');
+      allItems.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    }
+
+    // Scroll to Top action button toggling
+    window.addEventListener('scroll', () => {
+      const bttBtn = document.getElementById('back-to-top');
+      if (window.scrollY > 400) {
+        bttBtn.classList.add('visible');
+      } else {
+        bttBtn.classList.remove('visible');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
